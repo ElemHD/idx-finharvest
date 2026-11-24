@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Browser & Runtime Artifacts
+chrome_profile/
+chrome_out.txt
+
+# Scraped Datasets, Databases & Logs (preserve directory structure)
+data/raw_lk/*
+!data/raw_lk/.gitkeep
+logs/*
+!logs/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+*.log
+*.csv
+*.xlsx
+*.tmp
+
+# Packaging Artifacts
+*-github-ready.zip
+idx-finharvest.zip
+
+# Credentials, Secrets & Environments
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.secret
+credentials.json
+token.json
+.venv/
+env/
+venv/
+
+# OS & IDE Noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

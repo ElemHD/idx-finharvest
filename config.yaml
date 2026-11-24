@@ -1,0 +1,53 @@
+years:
+  - 2022
+  - 2023
+  - 2024
+  - 2025
+  - 2026
+
+periods:
+  - tw1
+  - tw2
+  - tw3
+  - audit
+
+period_mapping:
+  tw1: TW1
+  tw2: TW2
+  tw3: TW3
+  audit: FY
+
+api:
+  base_url: "https://www.idx.co.id/primary/ListedCompany/GetFinancialReport"
+  portal_url: "https://www.idx.co.id/id/perusahaan-tercatat/laporan-keuangan-dan-tahunan"
+  report_type: "rdf"
+  emiten_type: "s"
+  page_size: 50
+  pagination_mode: "auto"  # auto | page_1_based | page_0_based | offset
+
+cdp:
+  host: "localhost"
+  port: 9222
+  user_data_dir: "./chrome_profile"
+  chrome_path: ""  # Empty triggers auto-detection across Windows, macOS, and Linux
+
+# Random pacing intervals (seconds) to avoid triggering Cloudflare rate limits
+delays:
+  file_download_min: 1.5
+  file_download_max: 3.5
+  page_request_min: 2.0
+  page_request_max: 4.5
+
+paths:
+  download_dir: "./data/raw_lk"
+  db_path: "./logs/state.db"
+  log_file: "./logs/scraper.log"
+  audit_report: "./logs/audit_report.csv"
+
+network:
+  max_retries: 3
+  backoff_seconds:
+    - 3
+    - 6
+    - 12
+  timeout_ms: 30000
